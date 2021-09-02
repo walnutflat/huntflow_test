@@ -4,7 +4,6 @@
 """
 
 import time
-from pprint import pprint
 from typing import Optional
 
 import requests

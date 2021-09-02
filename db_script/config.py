@@ -34,3 +34,5 @@ MIME_TYPES = {
     '.doc': 'application/msword',
     '.pdf': 'application/pdf',
 }
+
+DUMP_FILENAME = 'sh.dump'

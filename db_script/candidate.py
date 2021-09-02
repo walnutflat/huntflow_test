@@ -32,6 +32,8 @@ class Candidate:
     added_id: Optional[int] = None
 
     def update_candidate(self, data):
+        """Добавить вспомогательную информацию.
+        """
         phones = data['fields'].get('phones')
         if phones:
             self.phone = phones[0]
@@ -51,6 +53,8 @@ class Candidate:
 
     @cached_property
     def payload(self):
+        """JSON для добавления в API.
+        """
         payload = {
             'last_name': self.last_name,
             'first_name': self.first_name,
