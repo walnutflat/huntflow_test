@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
 
-DB_FOLDER_DEFAULT = 'D://Тестовое задание/'
+"""Конфигурация.
+"""
+
+DB_FOLDER_DEFAULT = 'D:\Тестовое задание'
 TOKEN_DEFAULT = '71e89e8af02206575b3b4ae80bf35b6386fe3085af3d4085cbc7b43505084482'
 
 API_URL = 'https://dev-100-api.huntflow.dev/'

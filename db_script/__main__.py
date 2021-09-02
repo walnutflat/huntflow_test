@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+
+"""Точка входа.
+"""
+
 from typing import Optional
 from loguru import logger
 import click as click
