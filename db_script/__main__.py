@@ -8,9 +8,10 @@ from loguru import logger
 import click as click
 
 from db_script import config
-from db_script.files import get_db_files_list, get_data_from_files
+from db_script.handler import handle
 
 
+@logger.catch()
 @click.command()
 @click.option('--token', default=None, help='Токен API')
 @click.option('--folder', default=None, help='Директория с БД')
@@ -20,19 +21,16 @@ def main(token: Optional[str], folder: Optional[str]):
     logger.add(config.LOG_FILENAME)
     logger.warning('Старт сервиса по переносу данных кандидатов')
 
-    if not token:
-        config.token = config.TOKEN_DEFAULT
-    if not folder:
-        config.folder = config.DB_FOLDER_DEFAULT
+    if token:
+        config.token = token
+    if folder:
+        config.folder = folder
 
     logger.info(f'Параметры: токен = {config.token}, директория с БД = {config.folder}')
 
-    filenames = get_db_files_list(logger, config.folder)
-    files_data = get_data_from_files(logger, filenames)
+    handle(logger)
 
-
-
-
+    logger.warning('Сервис завершил работу')
 
 
 if __name__ == '__main__':

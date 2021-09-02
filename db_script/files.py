@@ -69,11 +69,8 @@ def link_cv(candidates: List[Candidate]) -> None:
 
         cv_path = cv_files[candidate.position].get(candidate.db_name)
         if cv_path:
-            cv_path = os.path.join(config.folder, cv_path)
+            cv_path = os.path.join(config.folder, candidate.position, cv_path)
 
         candidate.cv_path = cv_path
 
 
-
-if __name__ == '__main__':
-    get_data_from_files(None, config.DB_FOLDER_DEFAULT)
